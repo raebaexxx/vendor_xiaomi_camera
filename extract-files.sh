@@ -56,11 +56,17 @@ function blob_fixup() {
     case "${1}" in
         system/lib64/libgui-xiaomi.so)
             [ "$2" = "" ] && return 0
-            sed -i "s/android.hardware.graphics.common-V4-ndk.so/android.hardware.graphics.common-V5-ndk.so/" "${2}"
+            sed -i "s/android.hardware.graphics.common-V[4-5]-ndk.so/android.hardware.graphics.common-V7-ndk.so/" "${2}"
+            
             ;;
         system/lib64/libcamera_algoup_jni.xiaomi.so|system/lib64/libcamera_mianode_jni.xiaomi.so)
             [ "$2" = "" ] && return 0
             patchelf --replace-needed libgui.so libgui-xiaomi.so "${2}"
+            "${SIGSCAN}" -p "08 AD 40 F9" -P "08 A9 40 F9" -f "${2}"
+            ;;
+        system/lib64/libmicampostproc_client.so)
+            [ "$2" = "" ] && return 0
+            patchelf --remove-needed libhidltransport.so "${2}"
             ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
             [ "$2" = "" ] && return 0

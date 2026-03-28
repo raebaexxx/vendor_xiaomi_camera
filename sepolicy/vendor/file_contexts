@@ -83,4 +83,3 @@
 /(vendor|odm|odm)/lib(64)?/libmialgo_night_align_cdsp_skel.so               u:object_r:same_process_hal_file:s0
 /(vendor|odm|odm)/lib(64)?/libarcsoft.*\.so                                 u:object_r:same_process_hal_file:s0
 /(vendor|odm|odm)/lib(64)?/libmi_llhdr_raw.so                               u:object_r:same_process_hal_file:s0
-
