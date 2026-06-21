@@ -12,4 +12,7 @@ PRODUCT_PACKAGES += \
     libgui-xiaomi \
     libmicampostproc_client \
     vendor.xiaomi.hardware.campostproc@1.0_system \
-    MiuiCamera
+    MiuiCamera \
+    libquickcamera \
+    vendor.xiaomi.hardware.quickcamera@1.0 \
+    vendor.xiaomi.hardware.quickcamera@1.0-impl
